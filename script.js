@@ -1,15 +1,15 @@
 // Categorized user data
 const userData = {
-    "Friends": [
-        { name: "Toha", message: "Ummer kheal rakhish!" },
-        { name: "Maisha", message: "vai amar age to tor morar kotha silo" }
+    "Online Friends": [
+        { name: "Toha", message: "Hi Toha, great chatting online!" },
+        { name: "Maisha", message: "Maisha, catch up soon online!" }
     ],
     "Cousins": [
-        { name: "Ayon", message: "topper" }
+        { name: "Ayon", message: "Hey Ayon, see you at the family gathering!" }
     ],
     "Family": [
-        { name: "Mom", message: "kijani" },
-        { name: "Dad", message: "Thanks for nothing" }
+        { name: "Mom", message: "Love you Mom!" },
+        { name: "Dad", message: "Thanks for everything, Dad!" }
     ]
 };
 
@@ -21,6 +21,7 @@ const userListDiv = document.getElementById('userList');
 const selectedUser = document.getElementById('selectedUser');
 const userMessage = document.getElementById('userMessage');
 const sidebar = document.querySelector('.sidebar');
+const backBtn = document.getElementById('backBtn');
 
 // Populate sidebar with categorized names
 for (const category in userData) {
@@ -36,9 +37,8 @@ for (const category in userData) {
         li.addEventListener('click', () => {
             selectedUser.textContent = user.name;
             userMessage.textContent = user.message;
-
-            // Hide the sidebar when a name is selected
-            sidebar.style.display = 'none';
+            sidebar.style.display = 'none'; // Hide the list
+            backBtn.style.display = 'block'; // Show the back button
         });
         ul.appendChild(li);
     });
@@ -50,4 +50,13 @@ for (const category in userData) {
 continueBtn.addEventListener('click', () => {
     introScreen.style.display = 'none';
     mainScreen.style.display = 'flex';
+});
+
+// Back button click event
+backBtn.addEventListener('click', () => {
+    // Go back to the user list and hide the message
+    sidebar.style.display = 'block';
+    backBtn.style.display = 'none'; // Hide the back button
+    selectedUser.textContent = "Click your name from the list.";
+    userMessage.textContent = "";
 });
