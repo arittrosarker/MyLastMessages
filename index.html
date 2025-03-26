@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Messages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Intro Screen -->
+    <div id="introScreen" class="intro-screen">
+        <div class="intro-content">
+            <h2>Hello Everyone!</h2>
+            <p>
+                I’ve written a personal message for each of you.<br>
+                Find your name to see your message!
+            </p>
+            <button id="continueBtn">Continue</button>
+        </div>
+    </div>
+
+    <!-- Main Screen -->
+    <div id="mainScreen" class="main-screen" style="display:none;">
+        <div class="sidebar">
+            <h2>Last Messages for My People</h2>
+            <div id="userList">
+                <!-- Categorized names dynamically loaded -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div id="messageBox">
+                <h3 id="selectedUser">Click your name from the list. <br>
+                    This pile of burnt ashes would be grateful if you don’t check others and respect their privacy.</h3>
+                <p id="userMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

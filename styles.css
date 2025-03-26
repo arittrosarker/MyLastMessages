@@ -1,0 +1,192 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #fafafa;
+}
+
+/* Intro Screen */
+.intro-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.intro-content {
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.intro-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Main Screen */
+.main-screen {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #f4f4f4;
+    height: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Slide the sidebar out of view */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar li:hover {
+    background-color: #e8e8e8;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* Message Box */
+#messageBox {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#selectedUser {
+    color: #555;
+}
+
+#userMessage {
+    font-size: 16px;
+    color: #222;
+}
+
+/* Sidebar Categories */
+.sidebar h3 {
+    margin: 15px 5px 5px 5px;
+    font-size: 16px;
+    color: #444;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.sidebar li {
+    padding: 6px 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    margin-left: 5px;
+}
+
+.sidebar li:hover {
+    background-color: #e8e8e8;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .main-screen {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    #messageBox {
+        padding: 20px;
+    }
+
+    .sidebar h3 {
+        font-size: 14px;
+    }
+
+    .sidebar li {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Extra Small Screens (Phones) */
+@media screen and (max-width: 480px) {
+    .intro-screen {
+        padding: 10px;
+    }
+
+    .intro-content h2 {
+        font-size: 1.5em;
+    }
+
+    .intro-content p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar ul {
+        padding-left: 0;
+    }
+
+    .sidebar h3 {
+        font-size: 12px;
+    }
+
+    .sidebar li {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
